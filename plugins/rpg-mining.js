@@ -24,6 +24,8 @@ let handler = async (m, { conn }) => {
 handler.help = ['mining']
 handler.tags = ['rpg']
 handler.command = /^mining/i
+handler.limit = 3
+
 
 module.exports = handler
 
