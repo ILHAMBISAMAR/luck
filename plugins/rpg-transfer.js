@@ -27,6 +27,24 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     }
                 } else conn.reply(m.chat, `Uang kamu tidak mencukupi untuk mentransfer Money sebesar ${count}`.trim(), m)
                 break
+             case 'exp':
+                if (global.db.data.users[m.sender].exp >= count * 1) {
+                   try {
+                       global.db.data.users[m.sender].exp -= count * 1
+                       global.db.data.users[who].exp += count * 1
+                       conn.reply(m.chat, `Berhasil mentransfer exp sebesar ${count}`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].exp += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                               conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `Limit kamu tidak mencukupi untuk mentransfer exp sebesar ${count}`.trim(), m)
+                break
             case 'tabungan':
                 if (global.db.data.users[m.sender].atm >= count * 1) {
                    try {
