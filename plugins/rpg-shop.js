@@ -38,16 +38,16 @@ const Smangga = 100
 const Sanggur = 100
 const Baqua = 50
 const Bumpan = 150
-const Bkucing = 5
-const Banjing = 5
-const Bkuda = 7
-const Bfox = 10
-const Bserigala = 10
-const Bphonix = 20
-const Bcentaur = 35
-const Bgriffin = 35
-const Bnaga = 1000
-const Bfood = 500
+const Bkucing = 500
+const Banjing = 5000
+const Bkuda = 700000
+const Bfox = 10000000
+const Bserigala = 10000000
+const Bphonix = 200000
+const Bcentaur = 350000
+const Bgriffin = 35000
+const Bnaga = 1000000000000
+const Bfood = 500000
 const Bpet = 1500
 const Spet = 750
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
@@ -123,7 +123,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 ━━━━━━━━━━━━━━━━━━━
 *♻ Barang   | 💲 Harga Jual*
 ━━━━━━━━━━━━━━━━━━━
-*🧭 Relic:* ${Srelic} exp
+*🧭 Relic:* ${Srelic}
 *🥤 Potion:* ${Spotion}
 *🪙 Gold:* ${Sgold}
 *🧭 Arloji:* ${Sarloji}
@@ -474,9 +474,9 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                         break
                     case 'relic':
                         if (global.db.data.users[m.sender].relic >= count * 1) {
-                            global.db.data.users[m.sender].exp += Srelic * count
+                            global.db.data.users[m.sender].,oney += Srelic * count
                             global.db.data.users[m.sender].relic -= count * 1
-                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Relic 🪙 Dengan Harga ${Srelic * count} exp 💹`.trim(), m)
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Relic 🪙 Dengan Harga ${Srelic * count} money 💹`.trim(), m)
                         } else conn.reply(m.chat, `Relic Kamu Tidak Cukup`.trim(), m)
                         break
                     case 'gold':
