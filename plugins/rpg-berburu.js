@@ -106,6 +106,7 @@ handler.help = ['berburu']
 handler.tags = ['rpg']
 handler.command = /^(berburu)$/i
 handler.register = true
+handler.limit = true
 
 module.exports = handler
 function clockString(ms) {
