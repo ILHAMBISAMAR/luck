@@ -9,6 +9,8 @@ const Sbatu = 200
 const Bkayu = 500
 const Skayu = 200
 const Sarloji = 9000000
+const Brelic = 10000000
+const Srelic = 100000
 const Biron = 800
 const Siron = 700
 const Spotion = 150 
@@ -91,6 +93,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 ━━━━━━━━━━━━━━━━━━━
 *♻ Barang   | 💲 Harga beli*
 ━━━━━━━━━━━━━━━━━━━
+*🧭 Relic:* ${Brelic} money
 *🥤 Potion:* ${potion}
 *🍶 Aqua:* ${Baqua}
 *🪙  Gold :* ${Bgold}
@@ -120,6 +123,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 ━━━━━━━━━━━━━━━━━━━
 *♻ Barang   | 💲 Harga Jual*
 ━━━━━━━━━━━━━━━━━━━
+*🧭 Relic:* ${Srelic} exp
 *🥤 Potion:* ${Spotion}
 *🪙 Gold:* ${Sgold}
 *🧭 Arloji:* ${Sarloji}
@@ -290,10 +294,17 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                                 conn.reply(m.chat, `✔️ Sukses Membeli ${count} Potion 🥤 Dengan Harga ${potion * count} money 💹\n\n📍 Gunakan Potion Dengan Ketik: *${usedPrefix}use potion <jumlah>*`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Potion Dengan Harga ${potion * count} Money `,)
                         break
+                    case `relic`:
+                            if (global.db.data.users[m.sender].money >= Brelic * count) {
+                            global.db.data.users[m.sender].money -= Brelic * count
+                            global.db.data.users[m.sender].relic += count * 1
+                            conn.reply(m.chat, `Sukses Membeli ${count} relic 🪙 Dengan Harga ${Brelic * count} money`, m)
+                            } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Relic Dengan Harga ${Brelic * count} Money `,)
+                        break
                     case `gold`:
                             if (global.db.data.users[m.sender].money >= Bgold * count) {
                             global.db.data.users[m.sender].money -= Bgold * count
-                            global.db.data.users[m.sender].emas += count * 1
+                            global.db.data.users[m.sender].gold += count * 1
                             conn.reply(m.chat, `Sukses Membeli ${count} Gold 🪙 Dengan Harga ${Bgold * count} money`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Gold Dengan Harga ${Bgold * count} Money `,)
                         break
@@ -460,6 +471,13 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             global.db.data.users[m.sender].potion -= count * 1
                             conn.reply(m.chat, `✔️ Sukses Menjual ${count} Potion 🥤 Dengan Harga ${Spotion * count} Money 💹 `.trim(), m)
                         } else conn.reply(m.chat, `🥤 Potion Kamu Tidak Cukup`.trim(), m)
+                        break
+                    case 'relic':
+                        if (global.db.data.users[m.sender].relic >= count * 1) {
+                            global.db.data.users[m.sender].exp += Srelic * count
+                            global.db.data.users[m.sender].relic -= count * 1
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Relic 🪙 Dengan Harga ${Srelic * count} exp 💹`.trim(), m)
+                        } else conn.reply(m.chat, `Relic Kamu Tidak Cukup`.trim(), m)
                         break
                     case 'gold':
                         if (global.db.data.users[m.sender].gold >= count * 1) {
