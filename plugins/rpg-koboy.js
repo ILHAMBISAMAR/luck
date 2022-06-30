@@ -96,6 +96,8 @@ handler.help = ['koboy']
 handler.tags = ['rpg']
 handler.command = /^(koboy)/i
 
+handler.limit = 5
+
 module.exports = handler
 
 
