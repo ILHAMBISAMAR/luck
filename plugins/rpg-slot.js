@@ -87,6 +87,8 @@ handler.help = ['slot', 'jackpot']
 handler.tags = ['rpg', 'game']
 handler.command = /^slot?|jac?kpot$/i
 
+handler.limit = true
+
 module.exports = handler
 
 function pickRandom(list) {
