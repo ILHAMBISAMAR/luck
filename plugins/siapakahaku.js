@@ -30,5 +30,6 @@ Bonus: ${poin} XP
 handler.help = ['siapakahaku']
 handler.tags = ['game']
 handler.command = /^siapa(kah)?aku/i
+handler.limit = true
 
 module.exports = handler
