@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     else conn.judi[m.chat] = true
     try {
         let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
-        let randomkamu = `${Math.floor(Math.random() * 81)}`.trim() //hehe Biar Susah Menang :v
+        let randomkamu = `${Math.floor(Math.random() * 51)}`.trim() //hehe Biar Susah Menang :v
         let Aku = (randomaku * 1)
         let Kamu = (randomkamu * 1)
         let count = args[0]
@@ -19,8 +19,8 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
             if (Aku > Kamu) {
                 conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nAwokawokawok kamu *Kalah*, kamu kehilangan ${count} Money`.trim(), m)
             } else if (Aku < Kamu) {
-                global.db.data.users[m.sender].money += count * 2
-                conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nsialan, kamu *Menang*, kamu Mendapatkan ${count * 2} Money`.trim(), m)
+                global.db.data.users[m.sender].money += count * 8
+                conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nsialan, kamu *Menang*, kamu Mendapatkan ${count * 8} Money`.trim(), m)
             } else {
                 global.db.data.users[m.sender].money += count * 1
                 conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nYahh kamu *Seri*, kamu Mendapatkan ${count * 1} Money`.trim(), m)
