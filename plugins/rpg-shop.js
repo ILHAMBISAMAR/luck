@@ -9,8 +9,6 @@ const Sbatu = 200
 const Bkayu = 500
 const Skayu = 200
 const Sarloji = 9000000
-const Brelic = 10000000
-const Srelic = 100000
 const Biron = 800
 const Siron = 700
 const Spotion = 150 
@@ -38,16 +36,16 @@ const Smangga = 100
 const Sanggur = 100
 const Baqua = 50
 const Bumpan = 150
-const Bkucing = 500
-const Banjing = 5000
-const Bkuda = 700000
-const Bfox = 10000000
-const Bserigala = 10000000
-const Bphonix = 200000
-const Bcentaur = 350000
-const Bgriffin = 35000
-const Bnaga = 1000000000000
-const Bfood = 500000
+const Bkucing = 5
+const Banjing = 5
+const Bkuda = 7
+const Bfox = 10
+const Bserigala = 10
+const Bphonix = 20
+const Bcentaur = 35
+const Bgriffin = 35
+const Bnaga = 1000
+const Bfood = 500
 const Bpet = 1500
 const Spet = 750
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
@@ -93,7 +91,6 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 ━━━━━━━━━━━━━━━━━━━
 *♻ Barang   | 💲 Harga beli*
 ━━━━━━━━━━━━━━━━━━━
-*🧭 Relic:* ${Brelic} money
 *🥤 Potion:* ${potion}
 *🍶 Aqua:* ${Baqua}
 *🪙  Gold :* ${Bgold}
@@ -123,7 +120,6 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 ━━━━━━━━━━━━━━━━━━━
 *♻ Barang   | 💲 Harga Jual*
 ━━━━━━━━━━━━━━━━━━━
-*🧭 Relic:* ${Srelic}
 *🥤 Potion:* ${Spotion}
 *🪙 Gold:* ${Sgold}
 *🧭 Arloji:* ${Sarloji}
@@ -294,17 +290,10 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                                 conn.reply(m.chat, `✔️ Sukses Membeli ${count} Potion 🥤 Dengan Harga ${potion * count} money 💹\n\n📍 Gunakan Potion Dengan Ketik: *${usedPrefix}use potion <jumlah>*`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Potion Dengan Harga ${potion * count} Money `,)
                         break
-                    case `relic`:
-                            if (global.db.data.users[m.sender].money >= Brelic * count) {
-                            global.db.data.users[m.sender].money -= Brelic * count
-                            global.db.data.users[m.sender].relic += count * 1
-                            conn.reply(m.chat, `Sukses Membeli ${count} relic 🪙 Dengan Harga ${Brelic * count} money`, m)
-                            } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Relic Dengan Harga ${Brelic * count} Money `,)
-                        break
                     case `gold`:
                             if (global.db.data.users[m.sender].money >= Bgold * count) {
                             global.db.data.users[m.sender].money -= Bgold * count
-                            global.db.data.users[m.sender].gold += count * 1
+                            global.db.data.users[m.sender].emas += count * 1
                             conn.reply(m.chat, `Sukses Membeli ${count} Gold 🪙 Dengan Harga ${Bgold * count} money`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Gold Dengan Harga ${Bgold * count} Money `,)
                         break
@@ -471,13 +460,6 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             global.db.data.users[m.sender].potion -= count * 1
                             conn.reply(m.chat, `✔️ Sukses Menjual ${count} Potion 🥤 Dengan Harga ${Spotion * count} Money 💹 `.trim(), m)
                         } else conn.reply(m.chat, `🥤 Potion Kamu Tidak Cukup`.trim(), m)
-                        break
-                    case 'relic':
-                        if (global.db.data.users[m.sender].relic >= count * 1) {
-                            global.db.data.users[m.sender].,oney += Srelic * count
-                            global.db.data.users[m.sender].relic -= count * 1
-                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Relic 🪙 Dengan Harga ${Srelic * count} money 💹`.trim(), m)
-                        } else conn.reply(m.chat, `Relic Kamu Tidak Cukup`.trim(), m)
                         break
                     case 'gold':
                         if (global.db.data.users[m.sender].gold >= count * 1) {
