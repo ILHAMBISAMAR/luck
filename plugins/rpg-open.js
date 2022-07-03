@@ -149,8 +149,6 @@ handler.command = /^(open|buka|gacha)$/i
 
 module.exports = handler
 
-function isNumber(number) {
-    if (!number) return number
-    number = parseInt(number)
-    return typeof number == 'number' && !isNaN(number)
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)]
 }
