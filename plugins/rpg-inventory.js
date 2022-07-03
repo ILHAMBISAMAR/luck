@@ -67,6 +67,7 @@ let date = global.botdate
     let diamond = global.db.data.users[m.sender].diamond
     let potion = global.db.data.users[m.sender].potion
     let common = global.db.data.users[m.sender].common
+    let superior = global.db.data.users[m.sender].superior
     let makananpet = global.db.data.users[m.sender].makananpet
     let makanannaga = global.db.data.users[m.sender].makanannaga                                         
     let makananphonix = global.db.data.users[m.sender].makananphonix                                     
@@ -164,7 +165,6 @@ let date = global.botdate
     }
     }
     let str = `╭──────━• *STATUS* •━──────┐
-│📡 *Status:* ${premium ? "Premium": "Free"} User
 │📇 *Name:* ${usrname} 
 │💌 *Pasangan:* ${ pasangan ? namapsng : '❌'}
 │❗ *Warn:* ${warn}
@@ -272,6 +272,7 @@ ${readMore}
 │🛍️ *Uncommon:* ${uncommon}
 │🎁 *Mythic:* ${mythic}
 │🧰 *Legendary:* ${legendary}
+│👑 *superior:* ${superior}
 │📫 *Pet:* ${pet}
 ╰──────────━⃝┅⃝━────────┘
 
