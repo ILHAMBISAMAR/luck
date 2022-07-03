@@ -165,6 +165,7 @@ let date = global.botdate
     }
     }
     let str = `╭──────━• *STATUS* •━──────┐
+│📡 *Status:* ${premium ? "Premium": "Free"} User
 │📇 *Name:* ${usrname} 
 │💌 *Pasangan:* ${ pasangan ? namapsng : '❌'}
 │❗ *Warn:* ${warn}
