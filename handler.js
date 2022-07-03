@@ -68,6 +68,7 @@ module.exports = {
                     if (!isNumber(user.uncommon)) user.uncommon = 0
                     if (!isNumber(user.mythic)) user.mythic = 0
                     if (!isNumber(user.legendary)) user.legendary = 0
+                     if (!isNumber(user.superior)) user.superior = 0
                     if (!isNumber(user.glory)) user.glory = 0
                     if (!isNumber(user.enchant)) user.enchant = 0
                     if (!isNumber(user.pet)) user.pet = 0
