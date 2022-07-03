@@ -67,6 +67,7 @@ let date = global.botdate
     let diamond = global.db.data.users[m.sender].diamond
     let potion = global.db.data.users[m.sender].potion
     let common = global.db.data.users[m.sender].common
+    let superior = global.db.data.users[m.sender].superior
     let makananpet = global.db.data.users[m.sender].makananpet
     let makanannaga = global.db.data.users[m.sender].makanannaga                                         
     let makananphonix = global.db.data.users[m.sender].makananphonix                                     
@@ -112,7 +113,9 @@ let date = global.botdate
     let sorteduncommon = Object.entries(global.db.data.users).sort((a, b) => b[1].uncommon - a[1].uncommon)
     let sortedmythic = Object.entries(global.db.data.users).sort((a, b) => b[1].mythic - a[1].mythic)
     let sortedlegendary = Object.entries(global.db.data.users).sort((a, b) => b[1].legendary - a[1].legendary)
+    let sortedsuperior = Object.entries(global.db.data.users).sort((a, b) => b[1].superior - a[1].superior)
     let usersmoney = sortedmoney.map(v => v[0])
+    let userssuperior = sortedsuperior.map(v => v[0])
     let usersgold = sortedgold.map(v => v[0])
     let usersarlok = sortedarlok.map(v => v[0])
     let usersdiamond = sorteddiamond.map(v => v[0])
@@ -272,6 +275,7 @@ ${readMore}
 │🛍️ *Uncommon:* ${uncommon}
 │🎁 *Mythic:* ${mythic}
 │🧰 *Legendary:* ${legendary}
+│👑 *superior:* ${superior}
 │📫 *Pet:* ${pet}
 ╰──────────━⃝┅⃝━────────┘
 
@@ -346,6 +350,7 @@ ${readMore}
 │🛍️ *Top Uncommon:* ${usersuncommon.indexOf(m.sender) + 1} / ${usersuncommon.length}
 │🎁 *Top Mythic:* ${usersmythic.indexOf(m.sender) + 1} / ${usersmythic.length}
 │🧰 *Top Legendary:* ${userslegendary.indexOf(m.sender) + 1} / ${userslegendary.length}
+│👑 *Top superior:* ${userssuperior.indexOf(m.sender) + 1} / ${userssuperior.length}
 │🗑️ *Top Sampah:* ${userssampah.indexOf(m.sender) + 1} / ${userssampah.length}
 ╰──────────━⃝┅⃝━────────┘
 `
