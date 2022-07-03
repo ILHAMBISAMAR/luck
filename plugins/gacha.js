@@ -9,10 +9,7 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
         case 'common':
             switch (jumlah) {
                 case '1':
-                case 'crate':
-                    let __lastime = (new Date - global.db.data.users[m.sender].lastopen)
-                    let _lastime = (30000 - __lastime) 
-                    let lastime = clockString(_lastime)
+                case 'crate':                   
                     if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
                     let _cm = `${Math.floor(Math.random() * 50)}`.trim()
                     let _cc = `${Math.floor(Math.random() * 2)}`.trim()
@@ -1172,12 +1169,4 @@ module.exports = handler
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
-}
-
-function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
-  let m = Math.floor(ms / 60000) % 60
-  let s = Math.floor(ms / 1000) % 60
-  console.log({ms,h,m,s})
-  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
