@@ -1,8 +1,8 @@
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-    let bruh = `${usedPrefix}open <crate name> < 1 | 10 | 100 | 1000 >\n\nContoh penggunaan: *${usedPrefix}open common 10*\n\nlist crate:\n*pet*\n*boxs*\n*cupon*\n*common*\n*uncommon*\n*mythic*\n*legendary*\n*gardenboxs*`
+    let bruh = `${usedPrefix}open <crate name> < 1 | 10 | 100 | 1000 >\n\nContoh penggunaan: *${usedPrefix}open common 10*\n\nlist crate:\n*pet*\n*boxs*\n*cupon*\n*common*\n*uncommon*\n*mythic*\n*legendary*\n*superior*`
     let _lmao = args[0]
-    let Lmao = `Hanya support 1, 10, 100, 1000\nContoh penggunaan: *${usedPrefix}open ${args > 2 ? _lmao : pickRandom(['common', 'uncommon', 'mythic', 'legendary'])} 10*`
+    let Lmao = `Hanya support 1, 10, 100, 1000\nContoh penggunaan: *${usedPrefix}open ${args > 2 ? _lmao : pickRandom(['common', 'uncommon', 'mythic', 'legendary', 'superior'])} 10*`
     let type = (args[0] || '').toLowerCase()
     let jumlah = (args[1] || '').toLowerCase()
     switch (type) {
@@ -1055,6 +1055,208 @@ Anda telah membuka *Legendary crate* dan mendapatkan:${lm3 > 0 ? `\nMoney: ${lm3
                     return conn.reply(m.chat, Lmao, m)
             }
             break
+        case 'superior':
+            switch (jumlah) {
+                case '1':
+                case 'crate':
+                    let __lastimel = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimel = (30000 - __lastimel)
+                    let lastimel = clockString(_lastimel)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _om = `${Math.floor(Math.random() * 450000)}`.trim()
+                    let _oe = `${Math.floor(Math.random() * 550000)}`.trim()
+                    let _op = `${Math.floor(Math.random() * 500)}`.trim()
+                    let _ou = `${Math.floor(Math.random() * 700)}`.trim()
+                    let _oc = `${Math.floor(Math.random() * 1000)}`.trim()
+                    let _ol = `${pickRandom(['0', '0', '1', '0'])}`.trim()
+                    let _opp = `${pickRandom(['0', '1', '0'])}`.trim()
+                    let _od = `${Math.floor(Math.random() * 5)}`.trim()
+                    let _omm = `${pickRandom(['0', '1', '0', '1', '0', '0'])}`.trim()
+                    let om = (_om * 1)
+                    let oe = (_oe * 1)
+                    let op = (_op * 1) 
+                    let ou = (_ou * 1) 
+                    let oc = (_oc * 1) 
+                    let ol = (_ol * 1) 
+                    let opp = (_opp * 1)       
+                    let od = (_od * 1) 
+                    let omm = (_omm * 1)
+                    let oechat = `
+Anda telah membuka *superior crate* dan mendapatkan:${om > 0 ? `\nMoney: ${om}` : ''}${oe > 0 ? `\nExp: ${oe} *exp*` : ''}${od > 0 ? `\nDiamond: ${od} *diamond*` : ''}${op > 0 ? `\nPotion: ${op} *potion*` : ''}${oc > 0 ? `\nCommon crate: ${oc} *crate*` : ''}${ou > 0 ? `\nUncommon crate: ${ou} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].superior >= 1) {
+                        global.db.data.users[m.sender].superior -= 1
+                        global.db.data.users[m.sender].money += om * 1
+                        global.db.data.users[m.sender].diamond += od * 1
+                        global.db.data.users[m.sender].exp += oe * 1
+                        global.db.data.users[m.sender].potion += op * 1
+                        global.db.data.users[m.sender].common += oc * 1
+                        global.db.data.users[m.sender].uncommon += ou * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, oechat, m)
+                        if (omm > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${omm} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += omm * 1
+                        }
+                        if (ol > 0 || opp > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${ol > 0 ? `\n${ol} Legendary Crate` : ''}${opp > 0 ? `\n${opp} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += ol * 1
+                            global.db.data.users[m.sender].pet += opp * 1
+                        }
+                    } else conn.reply(m.chat, 'superior crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimel} lagi untuk bisa membuka fitur open`, m)
+ 
+               break
+case '10':
+                    let __lastimele = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimele = (30000 - __lastimele)
+                    let lastimele = clockString(_lastimele)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _om1 = `${Math.floor(Math.random() * 45000000)}`.trim()
+                    let _oe1 = `${Math.floor(Math.random() * 55000000)}`.trim()
+                    let _op1 = `${Math.floor(Math.random() * 300)}`.trim()
+                    let _ou1 = `${Math.floor(Math.random() * 500)}`.trim()
+                    let _oc1 = `${Math.floor(Math.random() * 750)}`.trim()
+                    let _ol1 = `${Math.floor(Math.random() * 20)}`.trim()
+                    let _opp1 = `${Math.floor(Math.random() * 60)}`.trim()
+                    let _od1 = `${Math.floor(Math.random() * 160)}`.trim()
+                    let _omm1 = `${Math.floor(Math.random() * 40)}`.trim()
+                    let om1 = (_om1 * 1)
+                    let oe1 = (_oe1 * 1)
+                    let op1 = (_op1 * 1) 
+                    let ou1 = (_ou1 * 1) 
+                    let oc1 = (_oc1 * 1) 
+                    let ol1 = (_ol1 * 1) 
+                    let opp1 = (_opp1 * 1)       
+                    let od1 = (_od1 * 1) 
+                    let omm1 = (_omm1 * 1)
+                    let oechat1 = `
+Anda telah membuka *superior crate* dan mendapatkan:${om1 > 0 ? `\nMoney: ${om1}` : ''}${oe1 > 0 ? `\nExp: ${oe1} *exp*` : ''}${od1 > 0 ? `\nDiamond: ${od1} *diamond*` : ''}${op1 > 0 ? `\nPotion: ${op1} *potion*` : ''}${oc1 > 0 ? `\nCommon crate: ${oc1} *crate*` : ''}${ou1 > 0 ? `\nUncommon crate: ${ou1} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].superior >= 10) {
+                        global.db.data.users[m.sender].superior -= 10
+                        global.db.data.users[m.sender].money += om1 * 1
+                        global.db.data.users[m.sender].diamond += od1 * 1
+                        global.db.data.users[m.sender].exp += oe1 * 1
+                        global.db.data.users[m.sender].potion += op1 * 1
+                        global.db.data.users[m.sender].common += oc1 * 1
+                        global.db.data.users[m.sender].uncommon += ou1 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, oechat1, m)
+                        if (omm1 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${omm1} Mythic Crate`, m )
+                            global.db.data.users[m.sender].mythic += omm1 * 1
+                        }
+                        if (ol1 > 0 || opp1 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${ol1 > 0 ? `\n${ol1} Legendary Crate` : ''}${opp1 > 0 ? `\n${opp1} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += ol1 * 1
+                            global.db.data.users[m.sender].pet += opp1 * 1
+                        }
+                    } else conn.reply(m.chat, 'superior crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimele} lagi untuk bisa membuka fitur open`, m)
+                break
+
+                case '100':
+                    let __lastimelee = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimelee = (30000 - __lastimelee)
+                    let lastimelee = clockString(_lastimelee)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _om2 = `${Math.floor(Math.random() * 650000000)}`.trim()
+                    let _oe2 = `${Math.floor(Math.random() * 550000000)}`.trim()
+                    let _op2 = `${Math.floor(Math.random() * 1000)}`.trim()
+                    let _ou2 = `${Math.floor(Math.random() * 2500)}`.trim()
+                    let _oc2 = `${Math.floor(Math.random() * 7500)}`.trim()
+                    let _ol2 = `${Math.floor(Math.random() * 100)}`.trim()
+                    let _opp2 = `${Math.floor(Math.random() * 501)}`.trim()
+                    let _od2 = `${Math.floor(Math.random() * 500)}`.trim()
+                    let _omm2 = `${Math.floor(Math.random() * 110)}`.trim()
+                    let om2 = (_om2 * 1)
+                    let oe2 = (_oe2 * 1)
+                    let op2 = (_op2 * 1) 
+                    let ou2 = (_ou2 * 1) 
+                    let oc2 = (_oc2 * 1) 
+                    let ol2 = (_ol2 * 1) 
+                    let opp2 = (_opp2 * 1)       
+                    let od2 = (_od2 * 1) 
+                    let omm2 = (_omm2 * 1)
+                    let oechat2 = `
+Anda telah membuka *superior crate* dan mendapatkan:${om2 > 0 ? `\nMoney: ${om2}` : ''}${oe2 > 0 ? `\nExp: ${oe2} *exp*` : ''}${od2 > 0 ? `\nDiamond: ${od2} *diamond*` : ''}${op2 > 0 ? `\nPotion: ${op2} *potion*` : ''}${oc2 > 0 ? `\nCommon crate: ${oc2} *crate*` : ''}${ou2 > 0 ? `\nUncommon crate: ${ou2} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].legendary >= 100) {
+                        global.db.data.users[m.sender].legendary -= 100
+                        global.db.data.users[m.sender].money += om2 * 1
+                        global.db.data.users[m.sender].diamond += od2 * 1
+                        global.db.data.users[m.sender].exp += oe2 * 1
+                        global.db.data.users[m.sender].potion += op2 * 1
+                        global.db.data.users[m.sender].common += oc2 * 1
+                        global.db.data.users[m.sender].uncommon += ou2 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, oechat2, m)
+                        if (omm2 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${omm2} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += omm2 * 1
+                        }
+                        if (ol2 > 0 || opp2 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${ol2 > 0 ? `\n${ol2} Legendary Crate` : ''}${opp2 > 0 ? `\n${opp2} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += ol2 * 1
+                            global.db.data.users[m.sender].pet += opp2 * 1
+                        }
+                    } else conn.reply(m.chat, 'superior crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimelee} lagi untuk bisa membuka fitur open`, m)
+                break
+
+case '1000':
+                    let __lastimeleee = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimeleee = (30000 - __lastimeleee)
+                    let lastimeleee = clockString(_lastimeleee)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _om3 = `${Math.floor(Math.random() * 8000000000)}`.trim()
+                    let _oe3 = `${Math.floor(Math.random() * 7800000000)}`.trim()
+                    let _op3 = `${Math.floor(Math.random() * 5000)}`.trim()
+                    let _ou3 = `${Math.floor(Math.random() * 10000)}`.trim()
+                    let _oc3 = `${Math.floor(Math.random() * 25000)}`.trim()
+                    let _ol3 = `${Math.floor(Math.random() * 510)}`.trim()
+                    let _opp3 = `${Math.floor(Math.random() * 2220)}`.trim()
+                    let _od3 = `${Math.floor(Math.random() * 2500)}`.trim()
+                    let _omm3 = `${Math.floor(Math.random() * 1110)}`.trim()
+                    let om3 = (_om3 * 1)
+                    let oe3 = (_oe3 * 1)
+                    let op3 = (_op3 * 1) 
+                    let ou3 = (_ou3 * 1) 
+                    let oc3 = (_oc3 * 1) 
+                    let ol3 = (_ol3 * 1) 
+                    let opp3 = (_opp3 * 1)       
+                    let od3 = (_od3 * 1) 
+                    let omm3 = (_omm3 * 1)
+                    let oechat3 = `
+Anda telah membuka *superior crate* dan mendapatkan:${om3 > 0 ? `\nMoney: ${om3}` : ''}${oe3 > 0 ? `\nExp: ${oe3} *exp*` : ''}${od3 > 0 ? `\nDiamond: ${od3} *diamond*` : ''}${op3 > 0 ? `\nPotion: ${op3} *potion*` : ''}${oc3 > 0 ? `\nCommon crate: ${oc3} *crate*` : ''}${ou3 > 0 ? `\nUncommon crate: ${ou3} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].legendary >= 1000) {
+                        global.db.data.users[m.sender].legendary -= 1000
+                        global.db.data.users[m.sender].money += om3 * 1
+                        global.db.data.users[m.sender].diamond += od3 * 1
+                        global.db.data.users[m.sender].exp += oe3 * 1
+                        global.db.data.users[m.sender].potion += op3 * 1
+                        global.db.data.users[m.sender].common += oc3 * 1
+                        global.db.data.users[m.sender].uncommon += ou3 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, oechat3, m)
+                        if (omm3 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${omm3} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += omm3 * 1
+                        }
+                        if (ol3 > 0 || opp3 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${ol3 > 0 ? `\n${ol3} Legendary Crate` : ''}${opp3 > 0 ? `\n${opp3} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += ol3 * 1
+                            global.db.data.users[m.sender].pet += opp3 * 1
+                        }
+                    } else conn.reply(m.chat, 'superior crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimeleee} lagi untuk bisa membuka fitur open`, m)
+                break
+                default:
+                    return conn.reply(m.chat, Lmao, m)
+            }
+            break    
         case 'pet':
             let _mknp = pickRandom([1, 2, 1, 5, 3, 2, 1, 2, 4, 1, 3, 5, 2, 4, 3])
             let mknp = (_mknp * 1)
