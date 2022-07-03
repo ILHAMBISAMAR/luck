@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     else conn.casino[m.chat] = true
     try {
         let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
-        let randomkamu = `${Math.floor(Math.random() * 81)}`.trim() //hehe Biar Susah Menang :v
+        let randomkamu = `${Math.floor(Math.random() * 40)}`.trim() //hehe Biar Susah Menang :v
         let Aku = (randomaku * 1)
         let Kamu = (randomkamu * 1)
         let count = args[0]
@@ -19,7 +19,7 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
             if (Aku > Kamu) {
                 conn.reply(m.chat, `💰 Casino 💰\n*Kamu:* ${Kamu} Point\n*Computer:* ${Aku} Point\n\n*You LOSE*\nKamu kehilangan ${count} Uang(xp)`.trim(), m)
             } else if (Aku < Kamu) {
-                global.db.data.users[m.sender].exp += count * 2
+                global.db.data.users[m.sender].exp += count * 5
                 conn.reply(m.chat, `💰 Casino 💰\n*Kamu:* ${Kamu} Point\n*Computer:* ${Aku} Point\n\n*You Win*\nKamu mendapatkan ${count * 2} Uang(xp)`.trim(), m)
             } else {
                 global.db.data.users[m.sender].exp += count * 1
