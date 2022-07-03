@@ -276,6 +276,7 @@ module.exports = {
                     uncommon: 0,
                     mythic: 0,
                     legendary: 0,
+                    superior: 0,
                     rumahsakit: 0,
                     fortress: 0,
                     trofi: 0,
