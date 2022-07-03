@@ -191,7 +191,7 @@ module.exports = {
          
                     if (!isNumber(user.lastadventure)) user.lastadventure = 0
                     if (!isNumber(user.lastkill)) user.lastkill = 0
-                    if (!isNumber(user.lastkill)) user.lastkill = 0
+                    if (!isNumber(user.lastopen)) user.lastopen = 0
                     if (!isNumber(user.lastfishing)) user.lastfishing = 0
                     if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
                     if (!isNumber(user.lastwar)) user.lastwar = 0
