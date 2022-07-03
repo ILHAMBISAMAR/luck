@@ -111,7 +111,7 @@ handler.help = ['open', 'gacha'].map(v => v + ' [crate] [count]')
 handler.tags = ['rpg']
 handler.command = /^(open|buka|gacha)$/i
 
-export default handler
+module.exports = handler
 
 function isNumber(number) {
     if (!number) return number
