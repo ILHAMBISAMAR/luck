@@ -1256,6 +1256,220 @@ Anda telah membuka *superior crate* dan mendapatkan:${om3 > 0 ? `\nMoney: ${om3}
                 default:
                     return conn.reply(m.chat, Lmao, m)
             }
+            break 
+        case 'ancient':
+            switch (jumlah) {
+                case '1':
+                case 'crate':
+                    let __lastimel = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimel = (30000 - __lastimel)
+                    let lastimel = clockString(_lastimel)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _zm = `${Math.floor(Math.random() * 67850800)}`.trim()
+                    let _ze = `${Math.floor(Math.random() * 55087000)}`.trim()
+                    let _zp = `${Math.floor(Math.random() * 576500)}`.trim()
+                    let _zu = `${Math.floor(Math.random() * 709760)}`.trim()
+		    let _zt = `${Math.floor(Math.random() * 10)}`.trim()
+                    let _zc = `${Math.floor(Math.random() * 1086800)}`.trim()
+                    let _zl = `${pickRandom(['0', '0', '1', '0'])}`.trim()
+                    let _zpp = `${pickRandom(['0', '1', '0'])}`.trim()
+                    let _zd = `${Math.floor(Math.random() * 5)}`.trim()
+                    let _zmm = `${pickRandom(['0', '1', '0', '1', '0', '0'])}`.trim()
+                    let zm = (_zm * 2)
+                    let ze = (_ze * 2)
+                    let zp = (_zp * 1) 
+		    let zt = (_zt * 1)
+                    let zu = (_zu * 1) 
+                    let zc = (_zc * 1) 
+                    let zl = (_zl * 1) 
+                    let zpp = (_zpp * 1)       
+                    let zd = (_zd * 1) 
+                    let zmm = (_zmm * 1)
+                    let zechat = `
+Anda telah membuka *ancient crate* dan mendapatkan:${zm > 0 ? `\nMoney: ${zm}` : ''}${ze > 0 ? `\nExp: ${ze} *exp*` : ''}${zd > 0 ? `\nDiamond: ${zd} *diamond*` : ''}${zt > 0 ? `\nRuby: ${zt} *ruby*` : ''}${zp > 0 ? `\nPotion: ${zp} *potion*` : ''}${zc > 0 ? `\nCommon crate: ${zc} *crate*` : ''}${zu > 0 ? `\nUncommon crate: ${zu} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].ancient >= 1) {
+                        global.db.data.users[m.sender].ancient -= 1
+                        global.db.data.users[m.sender].money += zm * 2
+                        global.db.data.users[m.sender].diamond += zd * 1
+			global.db.data.users[m.sender].ruby += zt * 1
+                        global.db.data.users[m.sender].exp += ze * 2
+                        global.db.data.users[m.sender].potion += zp * 1
+                        global.db.data.users[m.sender].common += zc * 1
+                        global.db.data.users[m.sender].uncommon += zu * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, zechat, m)
+                        if (zmm > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${zmm} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += zmm * 1
+                        }
+                        if (zl > 0 || zpp > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${zl > 0 ? `\n${zl} Legendary Crate` : ''}${zpp > 0 ? `\n${zpp} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += zl * 1
+                            global.db.data.users[m.sender].pet += zpp * 1
+                        }
+                    } else conn.reply(m.chat, 'ancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimel} lagi untuk bisa membuka fitur open`, m)
+ 
+               break
+
+case '10':
+                    let __lastimele = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimele = (30000 - __lastimele)
+                    let lastimele = clockString(_lastimele)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _zm1 = `${Math.floor(Math.random() * 678508000)}`.trim()
+                    let _ze1 = `${Math.floor(Math.random() * 550870000)}`.trim()
+                    let _zp1 = `${Math.floor(Math.random() * 34400)}`.trim()
+                    let _zu1 = `${Math.floor(Math.random() * 500444)}`.trim()
+                    let _zc1 = `${Math.floor(Math.random() * 75044)}`.trim()
+		    let _zt1 = `${Math.floor(Math.random() * 100)}`.trim()
+                    let _zl1 = `${Math.floor(Math.random() * 2440)}`.trim()
+                    let _zpp1 = `${Math.floor(Math.random() * 640)}`.trim()
+                    let _zd1 = `${Math.floor(Math.random() * 1640)}`.trim()
+                    let _zmm1 = `${Math.floor(Math.random() * 444)}`.trim()
+                    let zm1 = (_zm1 * 2)
+                    let ze1 = (_ze1 * 2)
+                    let zp1 = (_zp1 * 1) 
+		    let zt1 = (_zt1 * 1) 
+                    let zu1 = (_zu1 * 1) 
+                    let zc1 = (_zc1 * 1) 
+                    let zl1 = (_zl1 * 1) 
+                    let zpp1 = (_zpp1 * 1)       
+                    let zd1 = (_zd1 * 1) 
+                    let zmm1 = (_zmm1 * 1)
+                    let zechat1 = `
+Anda telah membuka *ancient crate* dan mendapatkan:${zm1 > 0 ? `\nMoney: ${zm1}` : ''}${ze1 > 0 ? `\nExp: ${ze1} *exp*` : ''}${zd1 > 0 ? `\nDiamond: ${zd1} *diamond*` : ''}${zp1 > 0 ? `\nPotion: ${zp1} *potion*` : ''}${zt1 > 0 ? `\nRuby: ${zt1} *ruby*` : ''}${zc1 > 0 ? `\nCommon crate: ${zc1} *crate*` : ''}${zu1 > 0 ? `\nUncommon crate: ${zu1} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].ancient >= 10) {
+                        global.db.data.users[m.sender].ancient -= 10
+                        global.db.data.users[m.sender].money += zm1 * 2
+                        global.db.data.users[m.sender].diamond += zd1 * 1
+                        global.db.data.users[m.sender].exp += ze1 * 2
+                        global.db.data.users[m.sender].potion += zp1 * 1
+			global.db.data.users[m.sender].ruby += zt1 * 1
+                        global.db.data.users[m.sender].common += zc1 * 1
+                        global.db.data.users[m.sender].uncommon += zu1 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, zechat1, m)
+                        if (zmm1 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${zmm1} Mythic Crate`, m )
+                            global.db.data.users[m.sender].mythic += zmm1 * 1
+                        }
+                        if (zl1 > 0 || zpp1 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${zl1 > 0 ? `\n${zl1} Legendary Crate` : ''}${zpp1 > 0 ? `\n${zpp1} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += zl1 * 1
+                            global.db.data.users[m.sender].pet += zpp1 * 1
+                        }
+                    } else conn.reply(m.chat, 'ancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimele} lagi untuk bisa membuka fitur open`, m)
+                break
+
+ case '100':
+                    let __lastimelee = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimelee = (30000 - __lastimelee)
+                    let lastimelee = clockString(_lastimelee)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _zm2 = `${Math.floor(Math.random() * 6785080000)}`.trim()
+                    let _ze2 = `${Math.floor(Math.random() * 5508700000)}`.trim()
+                    let _zp2 = `${Math.floor(Math.random() * 105600)}`.trim()
+                    let _zu2 = `${Math.floor(Math.random() * 2505660)}`.trim()
+                    let _zc2 = `${Math.floor(Math.random() * 750560)}`.trim()
+                    let _zl2 = `${Math.floor(Math.random() * 1000)}`.trim()
+		    let _zt2 = `${Math.floor(Math.random() * 1000)}`.trim()
+                    let _zpp2 = `${Math.floor(Math.random() * 5301)}`.trim()
+                    let _zd2 = `${Math.floor(Math.random() * 50350)}`.trim()
+                    let _zmm2 = `${Math.floor(Math.random() * 15310)}`.trim()
+                    let zm2 = (_zm2 * 2)
+                    let ze2 = (_ze2 * 2)
+                    let zp2 = (_zp2 * 1)
+		    let zt2 = (_zt2 * 1)  
+                    let zu2 = (_zu2 * 1) 
+                    let zc2 = (_zc2 * 1) 
+                    let zl2 = (_zl2 * 1) 
+                    let zpp2 = (_zpp2 * 1)       
+                    let zd2 = (_zd2 * 1) 
+                    let zmm2 = (_zmm2 * 1)
+                    let zechat2 = `
+Anda telah membuka *ancient crate* dan mendapatkan:${zm2 > 0 ? `\nMoney: ${zm2}` : ''}${ze2 > 0 ? `\nExp: ${ze2} *exp*` : ''}${zd2 > 0 ? `\nDiamond: ${zd2} *diamond*` : ''}${zt2 > 0 ? `\nRuby: ${zt2} *ruby*` : ''}${zp2 > 0 ? `\nPotion: ${zp2} *potion*` : ''}${zc2 > 0 ? `\nCommon crate: ${zc2} *crate*` : ''}${zu2 > 0 ? `\nUncommon crate: ${zu2} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].ancient >= 100) {
+                        global.db.data.users[m.sender].ancient -= 100
+                        global.db.data.users[m.sender].money += zm2 * 2
+                        global.db.data.users[m.sender].diamond += zd2 * 1
+                        global.db.data.users[m.sender].exp += ze2 * 2
+                        global.db.data.users[m.sender].potion += zp2 * 1
+			global.db.data.users[m.sender].ruby += zt2 * 1
+                        global.db.data.users[m.sender].common += zc2 * 1
+                        global.db.data.users[m.sender].uncommon += zu2 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, zechat2, m)
+                        if (zmm2 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${zmm2} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += zmm2 * 1
+                        }
+                        if (zl2 > 0 || zpp2 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${zl2 > 0 ? `\n${zl2} Legendary Crate` : ''}${zpp2 > 0 ? `\n${zpp2} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += zl2 * 1
+                            global.db.data.users[m.sender].pet += zpp2 * 1
+                        }
+                    } else conn.reply(m.chat, 'ancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimelee} lagi untuk bisa membuka fitur open`, m)
+                break
+
+case '1000':
+                    let __lastimeleee = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimeleee = (30000 - __lastimeleee)
+                    let lastimeleee = clockString(_lastimeleee)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _zm3 = `${Math.floor(Math.random() * 67850800000)}`.trim()
+                    let _ze3 = `${Math.floor(Math.random() * 55087000009)}`.trim()
+                    let _zp3 = `${Math.floor(Math.random() * 504300)}`.trim()
+                    let _zu3 = `${Math.floor(Math.random() * 1003400)}`.trim()
+                    let _zc3 = `${Math.floor(Math.random() * 2503400)}`.trim()
+                    let _zl3 = `${Math.floor(Math.random() * 51340)}`.trim()
+		    let _zt3 = `${Math.floor(Math.random() * 10000)}`.trim()
+                    let _zpp3 = `${Math.floor(Math.random() * 223420)}`.trim()
+                    let _zd3 = `${Math.floor(Math.random() * 253400)}`.trim()
+                    let _zmm3 = `${Math.floor(Math.random() * 113410)}`.trim()
+                    let zm3 = (_zm3 * 2)
+                    let ze3 = (_ze3 * 2)
+                    let zp3 = (_zp3 * 1) 
+                    let zu3 = (_zu3 * 1) 
+		    let zt3 = (_zt3 * 1) 
+                    let zc3 = (_zc3 * 1) 
+                    let zl3 = (_zl3 * 1) 
+                    let zpp3 = (_zpp3 * 1)       
+                    let zd3 = (_zd3 * 1) 
+                    let zmm3 = (_zmm3 * 1)
+                    let zechat3 = `
+Anda telah membuka *ancient crate* dan mendapatkan:${zm3 > 0 ? `\nMoney: ${zm3}` : ''}${ze3 > 0 ? `\nExp: ${ze3} *exp*` : ''}${zd3 > 0 ? `\nDiamond: ${zd3} *diamond*` : ''}${zt3 > 0 ? `\nRuby: ${zt3} *ruby*` : ''}${zp3 > 0 ? `\nPotion: ${zp3} *potion*` : ''}${zc3 > 0 ? `\nCommon crate: ${zc3} *crate*` : ''}${zu3 > 0 ? `\nUncommon crate: ${zu3} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].ancient >= 1000) {
+                        global.db.data.users[m.sender].ancient -= 1000
+                        global.db.data.users[m.sender].money += zm3 * 2
+                        global.db.data.users[m.sender].diamond += zd3 * 1
+                        global.db.data.users[m.sender].exp += ze3 * 2
+                        global.db.data.users[m.sender].potion += zp3 * 1
+                        global.db.data.users[m.sender].common += zc3 * 1
+                        global.db.data.users[m.sender].uncommon += zu3 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, zechat3, m)
+                        if (zmm3 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${zmm3} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += zmm3 * 1
+                        }
+                        if (zl3 > 0 || zpp3 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${zl3 > 0 ? `\n${zl3} Legendary Crate` : ''}${zpp3 > 0 ? `\n${zpp3} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += zl3 * 1
+                            global.db.data.users[m.sender].pet += zpp3 * 1
+                        }
+                    } else conn.reply(m.chat, 'ancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimeleee} lagi untuk bisa membuka fitur open`, m)
+                break
+                default:
+                    return conn.reply(m.chat, Lmao, m)
+            }
             break    
         case 'pet':
             let _mknp = pickRandom([1, 2, 1, 5, 3, 2, 1, 2, 4, 1, 3, 5, 2, 4, 3])
