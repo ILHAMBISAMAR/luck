@@ -66,6 +66,7 @@ let date = global.botdate
     let naga = global.db.data.users[m.sender].naga
     let _naga = global.db.data.users[m.sender].anaknaga
     let diamond = global.db.data.users[m.sender].diamond
+    let zamrud = global.db.data.users[m.sender].zamrud
     let potion = global.db.data.users[m.sender].potion
     let common = global.db.data.users[m.sender].common
     let superior = global.db.data.users[m.sender].superior
@@ -235,6 +236,9 @@ ${readMore}
 
 ╭──────━• *INVENTORY* •━──────┐
 │💎 *Diamond:* ${diamond}
+│🔮 *Zamrud:* ${zamrud}
+│💍 *Ruby:* ${ruby}
+│🪙  *Gold:* ${emas}
 │🧪 *Ramuan:* ${ramuan}
 │🥤 *Potion:* ${potion}
 │🗑️ *Sampah:* ${sampah}
@@ -242,8 +246,6 @@ ${readMore}
 │📦 *Kardus:* ${kardus}
 │🪵  *Kayu:* ${kayu}
 │🕸️ *String:* ${string}
-│🪙  *Gold:* ${emas}
-│💍 *Ruby:* ${ruby}
 │⛓  *Iron:* ${besi}
 │🪨  *Batu:* ${batu}
 │🧭 *Arloji:* ${arlok}
