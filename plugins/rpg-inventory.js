@@ -279,7 +279,7 @@ ${readMore}
 │🎁 *Mythic:* ${mythic}
 │🧰 *Legendary:* ${legendary}
 │👑 *Superior:* ${superior}
-│👑 *Ancinet:* ${ancient}
+│🔐 *Ancinet:* ${ancient}
 │📫 *Pet:* ${pet}
 ╰──────────━⃝┅⃝━────────┘
 
