@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 const potion = 500
-const Ssapphire = 458500000
-const Sruby = 17400000
+const Ssapphire = 45850000
+const Sruby = 37400000
 const Bruby = 76800000
 const Szamrud = 25600000
 const Bzamrud = 96800000
