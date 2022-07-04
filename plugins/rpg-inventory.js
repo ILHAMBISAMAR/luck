@@ -42,6 +42,7 @@ let date = global.botdate
     let ruby = global.db.data.users[m.sender].ruby
     let besi = global.db.data.users[m.sender].iron
     let batu = global.db.data.users[m.sender].batu
+    let sapphire = global.db.data.users[m.sender].sapphire
     let sapi = global.db.data.users[m.sender].sapi
     let ayam = global.db.data.users[m.sender].ayam
     let babi = global.db.data.users[m.sender].babi
@@ -235,6 +236,7 @@ ${readMore}
 ╰──────────━⃝┅⃝━────────┘
 
 ╭──────━• *INVENTORY* •━──────┐
+│⚱ *Sapphire:* ${sapphire}
 │💎 *Diamond:* ${diamond}
 │🔮 *Zamrud:* ${zamrud}
 │💍 *Ruby:* ${ruby}
