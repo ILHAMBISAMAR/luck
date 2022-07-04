@@ -1470,7 +1470,118 @@ Anda telah membuka *ancient crate* dan mendapatkan:${zm3 > 0 ? `\nMoney: ${zm3}`
                 default:
                     return conn.reply(m.chat, Lmao, m)
             }
-            break    
+            break
+		    
+	 case 'superancient':
+            switch (jumlah) {
+                case '1':
+                case 'crate':
+                    let __lastimel = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimel = (30000 - __lastimel)
+                    let lastimel = clockString(_lastimel)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _xm = `${Math.floor(Math.random() * 67850800)}`.trim()
+                    let _xe = `${Math.floor(Math.random() * 550870056320)}`.trim()
+                    let _xp = `${Math.floor(Math.random() * 576500)}`.trim()
+                    let _xu = `${Math.floor(Math.random() * 709760)}`.trim()
+		    let _xt = `${Math.floor(Math.random() * 100000)}`.trim()
+                    let _xc = `${Math.floor(Math.random() * 1086800)}`.trim()
+                    let _xl = `${pickRandom(['0', '0', '1', '0'])}`.trim()
+                    let _xpp = `${pickRandom(['0', '1', '0'])}`.trim()
+                    let _xd = `${Math.floor(Math.random() * 5)}`.trim()
+                    let _xmm = `${pickRandom(['0', '1', '0', '1', '0', '0'])}`.trim()
+                    let xm = (_xm * 4)
+                    let xe = (_xe * 6)
+                    let xp = (_xp * 1) 
+		    let xt = (_xt * 4)
+                    let xu = (_xu * 1) 
+                    let xc = (_xc * 1) 
+                    let xl = (_xl * 1) 
+                    let xpp = (_xpp * 1)       
+                    let xd = (_xd * 12) 
+                    let xmm = (_xmm * 1)
+                    let xechat = `
+Anda telah membuka *superancient crate* dan mendapatkan:${xm > 0 ? `\nMoney: ${xm}` : ''}${xe > 0 ? `\nExp: ${xe} *exp*` : ''}${xd > 0 ? `\nDiamond: ${xd} *diamond*` : ''}${xt > 0 ? `\nRuby: ${xt} *ruby*` : ''}${xp > 0 ? `\nPotion: ${xp} *potion*` : ''}${xc > 0 ? `\nCommon crate: ${xc} *crate*` : ''}${xu > 0 ? `\nUncommon crate: ${xu} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].superancient >= 1) {
+                        global.db.data.users[m.sender].superancient -= 1
+                        global.db.data.users[m.sender].money += xm * 4
+                        global.db.data.users[m.sender].diamond += xd * 12
+			global.db.data.users[m.sender].ruby += xt * 4
+                        global.db.data.users[m.sender].exp += xe * 6
+                        global.db.data.users[m.sender].potion += xp * 1
+                        global.db.data.users[m.sender].common += xc * 1
+                        global.db.data.users[m.sender].uncommon += xu * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, xechat, m)
+                        if (xmm > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${xmm} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += xmm * 23
+                        }
+                        if (xl > 0 || xpp > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${xl > 0 ? `\n${xl} Legendary Crate` : ''}${xpp > 0 ? `\n${xpp} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += xl * 12
+                            global.db.data.users[m.sender].pet += xpp * 1
+                        }
+                    } else conn.reply(m.chat, 'superancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimel} lagi untuk bisa membuka fitur open`, m)
+ 
+               break
+
+case '10':
+                    let __lastimeleee = (new Date - global.db.data.users[m.sender].lastopen)
+                    let _lastimeleee = (30000 - __lastimeleee)
+                    let lastimeleee = clockString(_lastimeleee)
+                    if (new Date - global.db.data.users[m.sender].lastopen > 30000) {
+                    let _xm3 = `${Math.floor(Math.random() * 678508066000)}`.trim()
+                    let _xe3 = `${Math.floor(Math.random() * 5508700000960)}`.trim()
+                    let _xp3 = `${Math.floor(Math.random() * 504300)}`.trim()
+                    let _xu3 = `${Math.floor(Math.random() * 10034)}`.trim()
+                    let _xc3 = `${Math.floor(Math.random() * 250340)}`.trim()
+                    let _xl3 = `${Math.floor(Math.random() * 51340)}`.trim()
+		    let _xt3 = `${Math.floor(Math.random() * 10000)}`.trim()
+                    let _xpp3 = `${Math.floor(Math.random() * 223420)}`.trim()
+                    let _xd3 = `${Math.floor(Math.random() * 253400)}`.trim()
+                    let _xmm3 = `${Math.floor(Math.random() * 113410)}`.trim()
+                    let xm3 = (_xm3 * 7)
+                    let xe3 = (_xe3 * 9)
+                    let xp3 = (_xp3 * 1) 
+                    let xu3 = (_xu3 * 1) 
+		    let xt3 = (_xt3 * 1) 
+                    let xc3 = (_xc3 * 1) 
+                    let xl3 = (_xl3 * 1) 
+                    let xpp3 = (_xpp3 * 1)       
+                    let xd3 = (_xd3 * 32) 
+                    let xmm3 = (_xmm3 * 1)
+                    let xechat3 = `
+Anda telah membuka *superancient crate* dan mendapatkan:${xm3 > 0 ? `\nMoney: ${xm3}` : ''}${xe3 > 0 ? `\nExp: ${xe3} *exp*` : ''}${xd3 > 0 ? `\nDiamond: ${xd3} *diamond*` : ''}${xt3 > 0 ? `\nRuby: ${xt3} *ruby*` : ''}${xp3 > 0 ? `\nPotion: ${xp3} *potion*` : ''}${xc3 > 0 ? `\nCommon crate: ${xc3} *crate*` : ''}${xu3 > 0 ? `\nUncommon crate: ${xu3} *crate*` : ''}
+`.trim()  
+                    if (global.db.data.users[m.sender].superancient >= 10) {
+                        global.db.data.users[m.sender].superancient -= 10
+                        global.db.data.users[m.sender].money += xm3 * 7
+                        global.db.data.users[m.sender].diamond += xd3 * 32
+                        global.db.data.users[m.sender].exp += xe3 * 9
+                        global.db.data.users[m.sender].potion += xp3 * 1
+                        global.db.data.users[m.sender].common += xc3 * 1
+                        global.db.data.users[m.sender].uncommon += xu3 * 1
+                        global.db.data.users[m.sender].lastopen = new Date * 1
+                        conn.reply(m.chat, xechat3, m)
+                        if (xmm3 > 0) {
+                            conn.reply(m.chat, `*Selamat anda mendapatkan item Rare yaitu*\n${xmm3} Mythic Crate`, m)
+                            global.db.data.users[m.sender].mythic += xmm3 * 786
+                        }
+                        if (xl3 > 0 || xpp3 > 0) {
+                             conn.reply(m.chat, `*Selamat anda mendapatkan item Epic yaitu*${xl3 > 0 ? `\n${xl3} Legendary Crate` : ''}${xpp3 > 0 ? `\n${xpp3} Pet Crate` : ''}`, m)
+                            global.db.data.users[m.sender].legendary += xl3 * 456
+                            global.db.data.users[m.sender].pet += xpp3 * 1
+                        }
+                    } else conn.reply(m.chat, 'superancient crate anda tidak cukup', m)
+                } else conn.reply(m.chat, `Mohon tunggu ${lastimeleee} lagi untuk bisa membuka fitur open`, m)
+                break
+                default:
+                    return conn.reply(m.chat, Lmao, m)
+            }
+            break
         case 'pet':
             let _mknp = pickRandom([1, 2, 1, 5, 3, 2, 1, 2, 4, 1, 3, 5, 2, 4, 3])
             let mknp = (_mknp * 1)
