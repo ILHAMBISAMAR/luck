@@ -28,12 +28,6 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
             let uncommon = (_uncommon * 1) 
             let _mythic = `${pickRandom(['1', '0', '0', '1'])}`
             let mythic = (_mythic * 1)
-            let _ancient = `${pickRandom(['1', '0', '0', '1', '0', '0', '0', '0'])}`
-            let ancient = (_ancient * 1)
-            let _zamrud = `${pickRandom(['1', '0', '0', '1', '0', '0', '0', '0'])}`
-            let zamrud = (_zamrud * 1)
-            let _sapphire = `${pickRandom(['1', '0', '0', '0', '0', '1', '0', '0', '0', '0'])}`
-            let sapphire = (_sapphire * 1)
             let _legendary = `${pickRandom(['1', '0', '0', '0'])}`
             let sampah = `${Math.floor(Math.random() * 300)}`.trim()
             let legendary = (_legendary * 1)
@@ -42,7 +36,7 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
 Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRandom(['Jepang', 'Korea', 'Bali', 'Amerika', 'Iraq', 'Arab', 'Pakistan', 'German', 'Finlandia', 'Ke bawa dunia mimpi', 'Ujung dunia', 'Mars', 'Bulan', 'Pluto', 'Matahari', 'Hatinya dia', '...'])} dan mendapatkan
 *exp:* ${exp} 
 *uang:* ${uang}
-*sampah:* ${sampah}${potion == 0 ? '' : '\n*Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n*diamond:* ' + diamond + ''}${sapphire == 0 ? '' : '\n*sapphire:* ' + sapphire + ''}${zamrud == 0 ? '' : '\n*zamrud:* ' + zamrud + ''}${common == 0 ? '' : '\n*common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n*uncommon crate:* ' + uncommon + ''}
+*sampah:* ${sampah}${potion == 0 ? '' : '\n*Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n*diamond:* ' + diamond + ''}${common == 0 ? '' : '\n*common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n*uncommon crate:* ' + uncommon + ''}
 `.trim()
             conn.sendButtonImg(m.chat, gambar1, str, wm3, 'Inventory', '.inv', m)
             if (mythic > 0) {
@@ -53,17 +47,11 @@ Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRan
                 global.db.data.users[m.sender].legendary += legendary * 1
                 conn.reply(m.chat, '*Selamat anda mendapatkan item Epic yaitu*\n' + legendary + ' Legendary Crate', m)
             }
-            if (ancient > 0) {
-                global.db.data.users[m.sender].ancient += ancient * 1
-                conn.reply(m.chat, '*Selamat anda mendapatkan item Relic yaitu*\n' + ancient + ' Ancient Crate', m)
-            }
             global.db.data.users[m.sender].healt -= healt * 1
             global.db.data.users[m.sender].exp += exp * 1
             global.db.data.users[m.sender].money += uang * 1
             global.db.data.users[m.sender].potion += potion * 1
             global.db.data.users[m.sender].diamond += diamond * 1
-            global.db.data.users[m.sender].sapphire += sapphire * 1
-            global.db.data.users[m.sender].zamrud += zamrud * 1
             global.db.data.users[m.sender].common += common * 1 
             global.db.data.users[m.sender].uncommon += uncommon * 1
             global.db.data.users[m.sender].sampah += sampah * 1
@@ -84,7 +72,6 @@ Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRan
 handler.help = ['adventure']
 handler.tags = ['rpg']
 handler.command = /^(adventure|(ber)?petualang(ang)?|mulung|work)$/i
-handler.limit = 5
 
 handler.fail = null
 
