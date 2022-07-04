@@ -69,7 +69,8 @@ module.exports = {
                     if (!isNumber(user.uncommon)) user.uncommon = 0
                     if (!isNumber(user.mythic)) user.mythic = 0
                     if (!isNumber(user.legendary)) user.legendary = 0
-                     if (!isNumber(user.superior)) user.superior = 0
+                    if (!isNumber(user.superior)) user.superior = 0
+                    if (!isNumber(user.ancient)) user.ancient = 0
                     if (!isNumber(user.glory)) user.glory = 0
                     if (!isNumber(user.enchant)) user.enchant = 0
                     if (!isNumber(user.pet)) user.pet = 0
@@ -280,6 +281,7 @@ module.exports = {
                     mythic: 0,
                     legendary: 0,
                     superior: 0,
+                    ancient: 0,
                     rumahsakit: 0,
                     fortress: 0,
                     trofi: 0,
