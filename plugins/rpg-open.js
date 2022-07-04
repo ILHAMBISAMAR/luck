@@ -1182,8 +1182,8 @@ Anda telah membuka *superior crate* dan mendapatkan:${om1 > 0 ? `\nMoney: ${om1}
                     let oechat2 = `
 Anda telah membuka *superior crate* dan mendapatkan:${om2 > 0 ? `\nMoney: ${om2}` : ''}${oe2 > 0 ? `\nExp: ${oe2} *exp*` : ''}${od2 > 0 ? `\nDiamond: ${od2} *diamond*` : ''}${op2 > 0 ? `\nPotion: ${op2} *potion*` : ''}${oc2 > 0 ? `\nCommon crate: ${oc2} *crate*` : ''}${ou2 > 0 ? `\nUncommon crate: ${ou2} *crate*` : ''}
 `.trim()  
-                    if (global.db.data.users[m.sender].legendary >= 100) {
-                        global.db.data.users[m.sender].legendary -= 100
+                    if (global.db.data.users[m.sender].superior >= 100) {
+                        global.db.data.users[m.sender].superior -= 100
                         global.db.data.users[m.sender].money += om2 * 1
                         global.db.data.users[m.sender].diamond += od2 * 1
                         global.db.data.users[m.sender].exp += oe2 * 1
@@ -1231,8 +1231,8 @@ case '1000':
                     let oechat3 = `
 Anda telah membuka *superior crate* dan mendapatkan:${om3 > 0 ? `\nMoney: ${om3}` : ''}${oe3 > 0 ? `\nExp: ${oe3} *exp*` : ''}${od3 > 0 ? `\nDiamond: ${od3} *diamond*` : ''}${op3 > 0 ? `\nPotion: ${op3} *potion*` : ''}${oc3 > 0 ? `\nCommon crate: ${oc3} *crate*` : ''}${ou3 > 0 ? `\nUncommon crate: ${ou3} *crate*` : ''}
 `.trim()  
-                    if (global.db.data.users[m.sender].legendary >= 1000) {
-                        global.db.data.users[m.sender].legendary -= 1000
+                    if (global.db.data.users[m.sender].superior >= 1000) {
+                        global.db.data.users[m.sender].superior -= 1000
                         global.db.data.users[m.sender].money += om3 * 1
                         global.db.data.users[m.sender].diamond += od3 * 1
                         global.db.data.users[m.sender].exp += oe3 * 1
