@@ -5,8 +5,8 @@ const Bsapphire = 3579
 const Sruby = 27400000
 const Bruby = 76800000
 const Szamrud = 25600000
-const Bzamrud = 96800000
-const Bsuperancient = 25
+const Bzamrud = 56
+const Bsuperancient = 63
 const Ssuperancient = 3
 const Sgold = 3000
 const Bgold = 6000
@@ -32,7 +32,7 @@ const Blegendary = 800000
 const Bsuperior = 99000000
 const Ssuperior = 1000000
 const Slegendary = 3000
-const Sancient = 36
+const Sancient = 365
 const Bancient = 63
 const Bsampah = 10
 const Ssampah = 2
@@ -330,11 +330,11 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Ruby Dengan Harga ${Bruby * count} Money `,)
                         break
                     case `zamrud`:
-                            if (global.db.data.users[m.sender].money >= Bzamrud * count) {
-                            global.db.data.users[m.sender].money -= Bzamrud * count
+                            if (global.db.data.users[m.sender].ruby >= Bzamrud * count) {
+                            global.db.data.users[m.sender].ruby -= Bzamrud * count
                             global.db.data.users[m.sender].zamrud += count * 1
-                            conn.reply(m.chat, `Sukses Membeli ${count} Zamrud 🔮 Dengan Harga ${Bzamrud * count} money`, m)
-                            } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Zamrud Dengan Harga ${Bzamrud * count} Money `,)
+                            conn.reply(m.chat, `Sukses Membeli ${count} Zamrud 🔮 Dengan Harga ${Bzamrud * count} ruby`, m)
+                            } else conn.reply(m.chat, `ruby Anda Tidak Cukup Untuk Membeli ${count} Zamrud Dengan Harga ${Bzamrud * count} ruby `,)
                         break
                     case `sapphire`:
                             if (global.db.data.users[m.sender].zamrud >= Bsapphire * count) {
