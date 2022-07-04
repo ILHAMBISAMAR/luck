@@ -29,7 +29,7 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
             let _mythic = `${pickRandom(['1', '0', '0', '1'])}`
             let mythic = (_mythic * 1)
             let _zamrud = `${pickRandom(['1', '0', '0', '0', '0', '1'])}`
-            let zamrun = (_zamrud * 1)
+            let zamrud = (_zamrud * 1)
             let _legendary = `${pickRandom(['1', '0', '0', '0'])}`
             let sampah = `${Math.floor(Math.random() * 300)}`.trim()
             let legendary = (_legendary * 1)
