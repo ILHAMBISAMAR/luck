@@ -1366,7 +1366,6 @@ handler.help = ['open <crate>']
 handler.tags = ['rpg']
 handler.command = /^(open)$/i
 handler.limit = true
-handler.group = true
 
 handler.fail = null
 
