@@ -25,7 +25,7 @@ module.exports = {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
                 if (user) {
-                    if (!isNumber(user.healt)) user.healt = 200
+                    if (!isNumber(user.healt)) user.healt = 99999999999999999999999
                     if (!isNumber(user.title)) user.title = 0
                     if (!isNumber(user.stamina)) user.stamina = 100
                     if (!isNumber(user.haus)) user.haus = 100
