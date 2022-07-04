@@ -39,6 +39,7 @@ let date = global.botdate
     let kayu = global.db.data.users[m.sender].kayu
     let string = global.db.data.users[m.sender].string
     let emas = global.db.data.users[m.sender].emas
+    let ruby = global.db.data.users[m.sender].ruby
     let besi = global.db.data.users[m.sender].iron
     let batu = global.db.data.users[m.sender].batu
     let sapi = global.db.data.users[m.sender].sapi
@@ -241,6 +242,7 @@ ${readMore}
 │🪵  *Kayu:* ${kayu}
 │🕸️ *String:* ${string}
 │🪙  *Gold:* ${emas}
+│💍 *Ruby:* ${ruby}
 │⛓  *Iron:* ${besi}
 │🪨  *Batu:* ${batu}
 │🧭 *Arloji:* ${arlok}
