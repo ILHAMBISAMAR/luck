@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     if (args.length < 3) {
-        return conn.reply(m.chat, `Gunakan format .transfer <type> <jumlah> <@tag>\n📍contoh penggunaan: *.transfer money 100 @tag*\n\n*List yang bisa di transfer :*\n💹Money\n💳 Tabungan\n📊 exp\n🥤Potion\n🗑️Sampah\n💎Diamond\n📦Common\n🛍️Uncommon\n🎁Mythic\n🧰Legendary\n👑superior\n🕸️string\n🪵kayu\n🪨batu\n⛓iron`.trim(), m)
+        return conn.reply(m.chat, `Gunakan format .transfer <type> <jumlah> <@tag>\n📍contoh penggunaan: *.transfer money 100 @tag*\n\n*List yang bisa di transfer :*\n💹Money\n💳 Tabungan\n📊 exp\n🥤Potion\n🗑️Sampah\n💎Diamond\n📦Common\n🛍️Uncommon\n🎁Mythic\n🧰Legendary\n👑Superior\n🔐Ancient\n💍Ruby\n🔮Zamrud\n🕸️string\n🪵kayu\n🪨batu\n⛓iron`.trim(), m)
     } else try {
         let type = (args[0] || '').toLowerCase()
         let count = args[1] && args[1].length > 0 ? Math.min(9999999999999999999999999999999, Math.max(parseInt(args[1]), 1)) : Math.min(1)
@@ -135,6 +135,24 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     }
                 } else conn.reply(m.chat, `Diamond kamu kamu tidak cukup`.trim(), m)
                 break
+            case 'zamrud':
+                if (global.db.data.users[m.sender].zamrud >= count * 1) {
+                    try {
+                        global.db.data.users[m.sender].zamrud -= count * 1
+                        global.db.data.users[who].zamrud += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer ${count} Zamrud`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].zamrud += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `Zamrud kamu kamu tidak cukup`.trim(), m)
+                break    
             case 'common':
                 if (global.db.data.users[m.sender].common >= count * 1) {
                     try {
@@ -224,6 +242,42 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         }
                     }
                 } else conn.reply(m.chat, `superior kamu tidak cukup`.trim(), m)
+                break
+            case 'ancient':
+                if (global.db.data.users[m.sender].ancient >= count * 1) {
+                    try {
+                        global.db.data.users[m.sender].ancient -= count * 1
+                        global.db.data.users[who].ancient += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer ${count} ancient`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].ancient += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `ancient kamu tidak cukup`.trim(), m)
+                break
+            case 'ruby':
+                if (global.db.data.users[m.sender].ruby >= count * 1) {
+                    try {
+                        global.db.data.users[m.sender].ruby -= count * 1
+                        global.db.data.users[who].ruby += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer ${count} ruby`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].ruby += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `ruby kamu tidak cukup`.trim(), m)
                 break
             case 'string':
                 if (global.db.data.users[m.sender].string >= count * 1) {
