@@ -1,5 +1,5 @@
 let handler = async (m, { args, usedPrefix }) => {
-    let user = global.db.data.users[m.sender]
+    let healt = global.db.data.users[m.sender].healt
     if (user.health >= 200) return m.reply(`
 Your ❤️health is full!
 `.trim())
