@@ -1,7 +1,7 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
     if (args.length < 3) {
-        return conn.reply(m.chat, `Gunakan format .transfer <type> <jumlah> <@tag>\n📍contoh penggunaan: *.transfer money 100 @tag*\n\n*List yang bisa di transfer :*\n💹Money\n💳 Tabungan\n📊 exp\n🥤Potion\n🗑️Sampah\n💎Diamond\n📦Common\n🛍️Uncommon\n🎁Mythic\n🧰Legendary\n👑Superior\n🔐Ancient\n💍Ruby\n🔮Zamrud\n🕸️string\n🪵kayu\n🪨batu\n⛓iron`.trim(), m)
+        return conn.reply(m.chat, `Gunakan format .transfer <type> <jumlah> <@tag>\n📍contoh penggunaan: *.transfer money 100 @tag*\n\n*List yang bisa di transfer :*\n💹Money\n💳 Tabungan\n📊 exp\n🥤Potion\n🗑️Sampah\n💎Diamond\n📦Common\n🛍️Uncommon\n🎁Mythic\n🧰Legendary\n👑Superior\n🔐Ancient\n💍Ruby\n🔮Zamrud\n⚱Sapphire\n🕸️string\n🪵kayu\n🪨batu\n⛓iron`.trim(), m)
     } else try {
         let type = (args[0] || '').toLowerCase()
         let count = args[1] && args[1].length > 0 ? Math.min(9999999999999999999999999999999, Math.max(parseInt(args[1]), 1)) : Math.min(1)
@@ -116,6 +116,24 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                         }
                     }
                 } else conn.reply(m.chat, `Sampah kamu tidak cukup`.trim(), m)
+                break
+            case 'sapphire':
+                if (global.db.data.users[m.sender].sapphire >= count * 1) {
+                    try {
+                        global.db.data.users[m.sender].sapphire -= count * 1
+                        global.db.data.users[who].sapphire += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer ${count} sapphire`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].sapphire += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `Sapphire kamu tidak cukup`.trim(), m)
                 break
             case 'diamond':
                 if (global.db.data.users[m.sender].diamond >= count * 1) {
