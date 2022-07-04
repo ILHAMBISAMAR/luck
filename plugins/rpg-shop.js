@@ -310,7 +310,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             if (global.db.data.users[m.sender].money >= Bruby * count) {
                             global.db.data.users[m.sender].money -= Bruby * count
                             global.db.data.users[m.sender].ruby += count * 1
-                            conn.reply(m.chat, `Sukses Membeli ${count} Ruby 🪙 Dengan Harga ${Bruby * count} money`, m)
+                            conn.reply(m.chat, `Sukses Membeli ${count} Ruby 💍 Dengan Harga ${Bruby * count} money`, m)
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Ruby Dengan Harga ${Bruby * count} Money `,)
                         break
                     case 'bibitmangga':
@@ -496,8 +496,8 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                         if (global.db.data.users[m.sender].ruby >= count * 1) {
                             global.db.data.users[m.sender].money += Sruby * count
                             global.db.data.users[m.sender].ruby -= count * 1
-                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Ruby 🪙 Dengan Harga ${Sruby * count} Money 💹`.trim(), m)
-                        } else conn.reply(m.chat, `Ruby Kamu Tidak Cukup`.trim(), m)
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Ruby 💍 Dengan Harga ${Sruby * count} Money 💹`.trim(), m)
+                        } else conn.reply(m.chat, `💍 Ruby Kamu Tidak Cukup`.trim(), m)
                         break    
                     case 'arloji':
                         if (global.db.data.users[m.sender].arlok >= count * 1) {
