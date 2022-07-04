@@ -32,6 +32,8 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
             let ancient = (_ancient * 1)
             let _zamrud = `${pickRandom(['1', '0', '0', '1', '0', '0', '0', '0'])}`
             let zamrud = (_zamrud * 1)
+            let _sapphire = `${pickRandom(['1', '0', '0', '0', '0', '1', '0', '0', '0', '0'])}`
+            let sapphire = (_sapphire * 1)
             let _legendary = `${pickRandom(['1', '0', '0', '0'])}`
             let sampah = `${Math.floor(Math.random() * 300)}`.trim()
             let legendary = (_legendary * 1)
@@ -40,7 +42,7 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
 Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRandom(['Jepang', 'Korea', 'Bali', 'Amerika', 'Iraq', 'Arab', 'Pakistan', 'German', 'Finlandia', 'Ke bawa dunia mimpi', 'Ujung dunia', 'Mars', 'Bulan', 'Pluto', 'Matahari', 'Hatinya dia', '...'])} dan mendapatkan
 *exp:* ${exp} 
 *uang:* ${uang}
-*sampah:* ${sampah}${potion == 0 ? '' : '\n*Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n*diamond:* ' + diamond + ''}${zamrud == 0 ? '' : '\n*zamrud:* ' + zamrud + ''}${common == 0 ? '' : '\n*common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n*uncommon crate:* ' + uncommon + ''}
+*sampah:* ${sampah}${potion == 0 ? '' : '\n*Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n*diamond:* ' + diamond + ''}${sapphire == 0 ? '' : '\n*sapphire:* ' + sapphire + ''}${zamrud == 0 ? '' : '\n*zamrud:* ' + zamrud + ''}${common == 0 ? '' : '\n*common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n*uncommon crate:* ' + uncommon + ''}
 `.trim()
             conn.sendButtonImg(m.chat, gambar1, str, wm3, 'Inventory', '.inv', m)
             if (mythic > 0) {
@@ -60,6 +62,7 @@ Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRan
             global.db.data.users[m.sender].money += uang * 1
             global.db.data.users[m.sender].potion += potion * 1
             global.db.data.users[m.sender].diamond += diamond * 1
+            global.db.data.users[m.sender].sapphire += sapphire * 1
             global.db.data.users[m.sender].zamrud += zamrud * 1
             global.db.data.users[m.sender].common += common * 1 
             global.db.data.users[m.sender].uncommon += uncommon * 1
