@@ -207,6 +207,24 @@ let handler = async (m, { conn, args, usedPrefix, DevMode }) => {
                     }
                 } else conn.reply(m.chat, `Legendary crate kamu kamu tidak cukup`.trim(), m)
                 break
+            case 'superior':
+                if (global.db.data.users[m.sender].superior >= count * 1) {
+                    try {
+                        global.db.data.users[m.sender].superior -= count * 1
+                        global.db.data.users[who].superior += count * 1
+                        conn.reply(m.chat, `Berhasil mentransfer ${count} superior`.trim(), m)
+                    } catch (e) {
+                        global.db.data.users[m.sender].superior += count * 1
+                        m.reply('Gagal Menstransfer')
+                        console.log(e)
+                        if (DevMode) {
+                            for (let jid of global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').filter(v => v != conn.user.jid)) {
+                                conn.sendMessage(jid, 'Transfer.js error\nNo: *' + m.sender.split`@`[0] + '*\nCommand: *' + m.text + '*\n\n*' + e + '*', MessageType.text)
+                            }
+                        }
+                    }
+                } else conn.reply(m.chat, `superior kamu tidak cukup`.trim(), m)
+                break
             case 'string':
                 if (global.db.data.users[m.sender].string >= count * 1) {
                     try {
