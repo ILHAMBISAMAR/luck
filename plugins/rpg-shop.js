@@ -1,5 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 const potion = 500
+const Ssapphire = 458500000
 const Sruby = 17400000
 const Bruby = 76800000
 const Szamrud = 25600000
@@ -140,6 +141,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 *🪵 Kayu:* ${Skayu}
 *🕸️ String:* ${Sstring}
 *⛓️ Iron:* ${Siron}
+*⚱ Sapphire:* ${Ssapphire} (Langka)
 *💎 Diamond:* ${Sdiamond}
 *💍 Ruby:* ${Sruby}
 *🔮 Zamrud:* ${Szamrud}
@@ -528,7 +530,14 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             global.db.data.users[m.sender].zamrud -= count * 1
                             conn.reply(m.chat, `✔️ Sukses Menjual ${count} Zamrud 🔮 Dengan Harga ${Szamrud * count} Money 💹`.trim(), m)
                         } else conn.reply(m.chat, `🔮 Zamrud Kamu Tidak Cukup`.trim(), m)
-                        break    
+                        break
+                    case 'sapphire':
+                        if (global.db.data.users[m.sender].zsapphire >= count * 1) {
+                            global.db.data.users[m.sender].money += Ssapphire * count
+                            global.db.data.users[m.sender].sapphire -= count * 1
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Sapphire ⚱ Dengan Harga ${Ssapphire * count} Money 💹`.trim(), m)
+                        } else conn.reply(m.chat, `⚱ Sapphire Kamu Tidak Cukup`.trim(), m)
+                        break      
                     case 'arloji':
                         if (global.db.data.users[m.sender].arlok >= count * 1) {
                             global.db.data.users[m.sender].money += Sarloji * count
