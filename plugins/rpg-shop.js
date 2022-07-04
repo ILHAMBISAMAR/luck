@@ -26,6 +26,8 @@ const Blegendary = 800000
 const Bsuperior = 99000000
 const Ssuperior = 1000000
 const Slegendary = 3000
+const Sancient = 10
+const Bancient = 42
 const Bsampah = 10
 const Ssampah = 2
 const Bjagung = 20
@@ -111,6 +113,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 *🎁 Mythic:* ${Bmythic}
 *🧰 Legendary:* ${Blegendary}
 *👑 Superior:* ${Bsuperior}
+*🔐 Ancient:* ${Bancient}
 
 *📫 Pet:* ${Bpet}
 
@@ -143,6 +146,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
 *🎁 Mythic:* ${Smythic}
 *🧰 Legendary:* ${Slegendary}
 *👑 Superior:* ${Ssuperior}
+*🔐 Ancient:* ${Sancient}
 *📫 Pet:* ${Spet}
 
 *🥭 Mangga:* ${Sjagung}
@@ -437,6 +441,14 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Superior Crate 👑 Dengan Harga ${Bsuperior * count} Money  💹\n\n📍 Buka Crate Dengan Ketik: *${usedPrefix}open superior*`, m)
                         
                         break
+                    case 'ancient':
+                            if (global.db.data.users[m.sender].ruby >= Bancient * count) {
+                                global.db.data.users[m.sender].ancient += count * 1
+                                global.db.data.users[m.sender].ruby -= Bancient * count
+                                conn.reply(m.chat, `✔️ Sukses Membeli ${count} ancient Crate 🔐 Dengan Harga ${Bancient * count} Ruby 💹`, m)
+                            } else conn.reply(m.chat, `Ruby Anda Tidak Cukup Untuk Membeli ${count} ancient Crate 🔐 Dengan Harga ${Bancient * count} Ruby  💹\n\n📍 Buka Crate Dengan Ketik: *${usedPrefix}open ancient*`, m)
+                        
+                        break
                     case 'pet':
                             if (global.db.data.users[m.sender].money >= Bpet * count) {
                                 global.db.data.users[m.sender].pet += count * 1
@@ -566,8 +578,15 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                         if (global.db.data.users[m.sender].superior >= count * 1) {
                             global.db.data.users[m.sender].money += Ssuperior * count
                             global.db.data.users[m.sender].superior -= count * 1
-                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} Legendary Crate 👑 Dengan Harga ${Ssuperior * count} Money 💹`.trim(), m)
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} superior Crate 👑 Dengan Harga ${Ssuperior * count} Money 💹`.trim(), m)
                         } else conn.reply(m.chat, `👑 superior Crate Kamu Tidak Cukup `.trim(), m)
+                        break
+                     case 'ancient':
+                        if (global.db.data.users[m.sender].ancient >= count * 1) {
+                            global.db.data.users[m.sender].ruby += Sancient * count
+                            global.db.data.users[m.sender].ancient -= count * 1
+                            conn.reply(m.chat, `✔️ Sukses Menjual ${count} ancient Crate 🔐 Dengan Harga ${Sancient * count} ruby 💹`.trim(), m)
+                        } else conn.reply(m.chat, `🔐 ancient Crate Kamu Tidak Cukup `.trim(), m)
                         break
                      case 'pet':
                         if (global.db.data.users[m.sender].pet >= count * 1) {
@@ -784,6 +803,14 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             global.db.data.users[m.sender].money -= Bsuperior * count
                             conn.reply(m.chat, `Sukses Membeli ${count} superior Crate Dengan Harga ${Bsuperior * count} Money`, m)
                         } else conn.reply(m.chat, `Uang Anda Tidak Cukup Untuk Membeli ${count} Superior Crate Dengan Harga ${Bsuperior * count} Money \n\nBuka Crate Dengan Ketik: *${usedPrefix}open superior*`, m)
+                    
+                    break
+                case 'ancient':
+                        if (global.db.data.users[m.sender].ruby >= Bancient * count) {
+                            global.db.data.users[m.sender].ancient += count * 1
+                            global.db.data.users[m.sender].ruby -= Bancient * count
+                            conn.reply(m.chat, `Sukses Membeli ${count} ancient Crate Dengan Harga ${Bancient * count} ruby`, m)
+                        } else conn.reply(m.chat, `ruby Anda Tidak Cukup Untuk Membeli ${count} ancient Crate Dengan Harga ${Bancient * count} Ruby \n\nBuka Crate Dengan Ketik: *${usedPrefix}open superior*`, m)
                     
                     break
                 case 'sampah':
