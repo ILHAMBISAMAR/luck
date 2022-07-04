@@ -72,6 +72,7 @@ module.exports = {
                     if (!isNumber(user.mythic)) user.mythic = 0
                     if (!isNumber(user.legendary)) user.legendary = 0
                     if (!isNumber(user.superior)) user.superior = 0
+                    if (!isNumber(user.superancient)) user.superancient = 0
                     if (!isNumber(user.ancient)) user.ancient = 0
                     if (!isNumber(user.glory)) user.glory = 0
                     if (!isNumber(user.enchant)) user.enchant = 0
@@ -277,7 +278,7 @@ module.exports = {
                     ruby: 0,
                     sapphire: 0,
                     diamond: 0,
-                    zamrud: 0,
+                    zamrud: 100,
                     iron: 0,
                     emas: 0,
                     common: 0,
@@ -286,6 +287,7 @@ module.exports = {
                     legendary: 0,
                     superior: 0,
                     ancient: 0,
+                    superancient: 0,
                     rumahsakit: 0,
                     fortress: 0,
                     trofi: 0,
