@@ -59,6 +59,7 @@ module.exports = {
                     if (!isNumber(user.kaleng)) user.kaleng = 0
                     if (!isNumber(user.aqua)) user.aqua = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
+                    if (!isNumber(user.zamrud)) user.zamrud = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.emas)) user.emas = 0
                     if (!isNumber(user.arlok)) user.arlok = 0
@@ -274,6 +275,7 @@ module.exports = {
                     money: 0,
                     ruby: 0,
                     diamond: 0,
+                    zamrud: 0,
                     iron: 0,
                     emas: 0,
                     common: 0,
