@@ -62,6 +62,7 @@ module.exports = {
                     if (!isNumber(user.zamrud)) user.zamrud = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.emas)) user.emas = 0
+                    if (!isNumber(user.sapphire)) user.sapphire = 0
                     if (!isNumber(user.arlok)) user.arlok = 0
                     if (!isNumber(user.ruby)) user.ruby = 0
         
@@ -274,6 +275,7 @@ module.exports = {
                     lastclaim: 0,
                     money: 0,
                     ruby: 0,
+                    sapphire: 0,
                     diamond: 0,
                     zamrud: 0,
                     iron: 0,
