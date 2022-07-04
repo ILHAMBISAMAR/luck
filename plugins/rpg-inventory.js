@@ -72,6 +72,7 @@ let date = global.botdate
     let common = global.db.data.users[m.sender].common
     let superior = global.db.data.users[m.sender].superior
     let ancient = global.db.data.users[m.sender].ancient
+    let superancient = global.db.data.users[m.sender].superancient
     let makananpet = global.db.data.users[m.sender].makananpet
     let makanannaga = global.db.data.users[m.sender].makanannaga                                         
     let makananphonix = global.db.data.users[m.sender].makananphonix                                     
@@ -283,7 +284,8 @@ ${readMore}
 │🎁 *Mythic:* ${mythic}
 │🧰 *Legendary:* ${legendary}
 │👑 *Superior:* ${superior}
-│🔐 *Ancinet:* ${ancient}
+│🔐 *Ancient:* ${ancient}
+│🔐 *SuperAncient:* ${ancient}
 │📫 *Pet:* ${pet}
 ╰──────────━⃝┅⃝━────────┘
 
