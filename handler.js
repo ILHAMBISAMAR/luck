@@ -62,6 +62,7 @@ module.exports = {
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.emas)) user.emas = 0
                     if (!isNumber(user.arlok)) user.arlok = 0
+                    if (!isNumber(user.ruby)) user.ruby = 0
         
                     if (!isNumber(user.common)) user.common = 0
                     if (!isNumber(user.as)) user.as = 0
@@ -270,6 +271,7 @@ module.exports = {
                     tigame: 50,
                     lastclaim: 0,
                     money: 0,
+                    ruby: 0,
                     diamond: 0,
                     iron: 0,
                     emas: 0,
