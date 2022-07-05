@@ -13,6 +13,7 @@ Atau bisa jadi faktor *MUKA*`, m)
 handler.help = ['ytv720 <url>']
 handler.tags = ['internet']
 handler.command = /^ytv720$/i
+handler.limit = 5
 
 
 module.exports = handler
